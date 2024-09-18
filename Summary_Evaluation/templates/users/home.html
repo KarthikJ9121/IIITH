@@ -1,0 +1,177 @@
+{% extends 'includes/base.html' %}
+
+{% block taskspage %}
+{% endblock taskspage %}
+
+{% block user_dashboard %}
+{% endblock user_dashboard %}
+
+{% block lead_dashboard %}
+{% endblock lead_dashboard %}
+
+{% block manager_dashboard %}
+{% endblock manager_dashboard %}
+
+{% block signinpage %}
+    <li class="nav-item">
+        <a class="nav-link text-white" href="{% url 'sign_in' %}">SignIn</a>
+    </li>
+{% endblock signinpage %}
+
+{% block content %}
+<div class="container my-2">
+  <div class="row">
+    
+    <div class="col-md-6 mt-1">
+      <div class="card">
+        <div class="card-body">
+          <center><h5 class="card-title">Motivation</h5>
+          <hr width="40%"></center>
+          <p class="card-text">Majority of the Natural Language Processing (NLP) tasks are data centric. Which requires huge datasets to train the NLP models. We would like to manually create and evaluate the datasets for various tasks like summarization, question answering and machine translation.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mt-1">
+      <div class="card">
+        <div class="card-body">
+          <center><h5 class="card-title">Objective</h5>
+          <hr width="40%"></center>
+          <p class="card-text">The main aim of providing this remote internship is to introduce NLP and Deep Learning concepts to enthusiastic students and allow the students to contribute to the projects’ entire pipeline: from data preparation to model deployment.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="text-center">Success Stories</h4>
+      <center><hr width="30%"></center>
+    </div>
+  </div>
+<!-- 
+  <div class="row my-2">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <center><h5 class="card-title">Gopichand Kanumolu</h5>
+            <h6>MS by Research, IIIT - Hyderabad</h6>
+          <hr width="50%"></center>
+          <p>Willkommen bei den ganzen tollen Elementen</p>
+          <div class="collapse mb-3" id="story_1">
+            This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+          </div>
+          <div>
+            <button class="btn btn-primary btn-sm float-end" type="button" data-bs-toggle="collapse" data-bs-target="#story_1" aria-expanded="false" aria-controls="collapseWidthExample">Read more</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row my-2">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <center><h5 class="card-title">Lokesh Madasu</h5>
+            <h6>MS by Research, IIIT - Hyderabad</h6>
+          <hr width="50%"></center>
+          <p>Willkommen bei den ganzen tollen Elementen</p>
+          <div class="collapse mb-3" id="story_2">
+            This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+          </div>
+          <div>
+            <button class="btn btn-primary btn-sm float-end" type="button" data-bs-toggle="collapse" data-bs-target="#story_2" aria-expanded="false" aria-controls="collapseWidthExample">Read more</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="row my-2">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <center><h5 class="card-title">Prasanth Battula</h5>
+            <h6>Full Stack Developer at <b>Bditto</b></h6>
+          <hr width="50%"></center>
+          <p>Willkommen bei den ganzen tollen Elementen</p>
+          <div class="collapse mb-3" id="story_3">
+            This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+          </div>
+          <div>
+            <button class="btn btn-primary btn-sm float-end" type="button" data-bs-toggle="collapse" data-bs-target="#story_3" aria-expanded="false" aria-controls="collapseWidthExample">Read more</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row my-2">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <center><h5 class="card-title">Adi Narayana Madapakula</h5>
+            <h6>Analyst at <b>The Math Company</b></h6>
+          <hr width="50%"></center>
+          <p>Willkommen bei den ganzen tollen Elementen</p>
+          <div class="collapse mb-3" id="story_4">
+            This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+          </div>
+          <div>
+            <button class="btn btn-primary btn-sm float-end" type="button" data-bs-toggle="collapse" data-bs-target="#story_4" aria-expanded="false" aria-controls="collapseWidthExample">Read more</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row my-2">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <center><h5 class="card-title">Gopu Shriya</h5>
+            <h6>Undergraduate student at <b>RGUKT-Basar</b></h6>
+          <hr width="50%"></center>
+          <p>Willkommen bei den ganzen tollen Elementen</p>
+          <div class="collapse mb-3" id="story_3">
+            This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+          </div>
+          <div>
+            <button class="btn btn-primary btn-sm float-end" type="button" data-bs-toggle="collapse" data-bs-target="#story_3" aria-expanded="false" aria-controls="collapseWidthExample">Read more</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row my-2">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <center><h5 class="card-title">Anindita Bhattacharya</h5>
+            <h6>Undergraduate student at <b>KL University</b></h6>
+          <hr width="50%"></center>
+          <p>Willkommen bei den ganzen tollen Elementen</p>
+          <div class="collapse mb-3" id="story_4">
+            This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+          </div>
+          <div>
+            <button class="btn btn-primary btn-sm float-end" type="button" data-bs-toggle="collapse" data-bs-target="#story_4" aria-expanded="false" aria-controls="collapseWidthExample">Read more</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock content %}
+
+{% block page_footer %}
+{% endblock page_footer %}

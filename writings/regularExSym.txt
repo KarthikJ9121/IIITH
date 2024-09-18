@@ -1,0 +1,67 @@
+Regular expressions (regex) are a powerful tool for pattern matching and manipulating text. They provide a concise and flexible way to search, match, and manipulate strings based on specific patterns.
+
+A regular expression is a sequence of characters that forms a search pattern. It consists of literal characters, metacharacters, and special symbols that define the pattern to be matched. Regular expressions can be used in various programming languages and text editors.
+
+Here are some commonly used elements and concepts in regular expressions:
+
+1. Literal Characters: Literal characters represent themselves and match exactly. For example, the regex `hello` matches the exact string "hello".
+
+2. Metacharacters: Metacharacters have special meanings in regular expressions. They allow you to express more complex patterns. Some commonly used metacharacters include:
+
+   - `.` (dot): Matches any character except a newline.
+   - `*` (asterisk): Matches zero or more occurrences of the preceding element.
+   - `+` (plus): Matches one or more occurrences of the preceding element.
+   - `?` (question mark): Matches zero or one occurrence of the preceding element.
+   - `|` (pipe): Acts as an OR operator, matching either the preceding or following pattern.
+   - `^` (caret): Matches the beginning of a line.
+   - `$` (dollar sign): Matches the end of a line.
+   - `\` (backslash): Escapes special characters, allowing you to match them literally.
+
+3. Character Classes: Character classes define a set of characters to match. They are enclosed in square brackets `[ ]`. For example, `[aeiou]` matches any vowel character.
+
+4. Quantifiers: Quantifiers specify the number of occurrences of a preceding element. Some common quantifiers include:
+
+   - `*` (asterisk): Matches zero or more occurrences.
+   - `+` (plus): Matches one or more occurrences.
+   - `?` (question mark): Matches zero or one occurrence.
+   - `{n}`: Matches exactly n occurrences.
+   - `{n,}`: Matches at least n occurrences.
+   - `{n,m}`: Matches between n and m occurrences.
+
+5. Anchors: Anchors specify the position of a pattern within a string. Common anchors include:
+
+   - `^` (caret): Matches the beginning of a line.
+   - `$` (dollar sign): Matches the end of a line.
+
+6. Groups and Capturing: Groups are used to group subexpressions together. They are created using parentheses `( )`. Capturing groups allow you to extract the matched text for further processing.
+
+7. Escape Sequences: Escape sequences are used to match special characters literally. They are created by preceding the special character with a backslash `\`. For example, `\.` matches a literal dot character.
+
+Regular expressions can be used for a variety of tasks such as string validation, search and replace, data extraction, tokenization, and more. They provide a powerful and concise way to handle complex text patterns.
+
+It's important to note that regular expressions can be quite intricate and require practice to master. Additionally, the syntax and available features can vary slightly between different programming languages and regex implementations.
+
+
+
+
+
+
+//Intern's
+^   -->   Beginning of line
+$   -->   End of line
+[abc]   -->   Match any character enclosed in the brackets
+[^abc]   -->   Match any character not enclosed in the brackets
+[a-z]   -->   Match the range of characters specified by the hyphen
+.   -->   Match any single character
+\   -->   Use the literal meaning of the metacharacter
+?   -->   Match zero or one of the preceding expressions
+*   -->   Match zero, one, or many of the preceding expression
++   -->   Match one or many of the preceding expression
+\d   -->   Match digit (0-9)
+\D   -->   Not a digit (0-9)
+\w   -->   Word character
+\W   -->   Not a word character
+\s   -->   Whitespace (space, tab, newline)
+\S   -->   Not a whitespace
+
+
