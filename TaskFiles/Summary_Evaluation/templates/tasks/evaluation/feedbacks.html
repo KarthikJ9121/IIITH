@@ -1,0 +1,122 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+
+{% block import_data %}
+{% endblock import_data %}
+
+{% block annotate_data %}
+{% endblock annotate_data %}
+
+{% block contactpage %}
+{% endblock contactpage %}
+
+
+{% block include_style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style_new.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/progress_style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/sweetalert.css' %}">
+
+<style type="text/css">
+    .action-button{
+        background-color: red;
+    }
+</style>
+{% endblock include_style %}
+
+
+{% block include_script %}
+<script type="text/javascript" src="{% static 'js/progress_js.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sweetalert.min.js' %}"></script>
+
+<script type="text/javascript">
+    // Function to display the sweet alert with the custom input along with the time (in milliseconds)
+    function sweet_alert(message, alert_type, time_sec = 2000) {
+        swal({
+            title: '',
+            text: message,
+            timer: time_sec,
+            type: alert_type,
+            showConfirmButton: true
+        });
+    }
+
+
+    function save_feedback(){
+        var file_name = $('#file_name').val();
+        var feedback = $('#feedback').val();
+        
+        $.ajax({
+            data: {'file_name': file_name, 'feedback': feedback},
+            dataType: 'json',
+            url: "{% url 'save_feedback'%}",
+            type: "POST",
+            // async: false,
+            success: function (response) {
+                sweet_alert(response['message'], response['status']);
+            },
+            error: function(err){
+                console.log(err);
+            }
+        });   
+    }
+</script>
+{% endblock include_script %}
+
+{% block content %}
+
+<div class="container-fluid">
+    
+    <div class="row mt-2" style="height: 5%;">
+        <div class="col-md-8 col-lg-8 col-sm-8">
+            <input type="text" id="file_name" value="{{ filename }}" hidden>
+            <h5 class="text-center" style="height:5%;">Feedback of {{ filename }}</h5>
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-4">
+            <button type="button" class="btn btn-sm btn-success float-end" onclick="save_feedback()">Save Feedback</button>
+        </div>
+    </div>
+    <div class="row" style="height:80%;">
+        <div class="col-md-7 col-lg-7 col-sm-7">
+            <textarea id="feedback" style="width: 100%; height: 90%; resize: none;" placeholder="Overall Feedback will be loaded here">
+                {% if status == 'completed' %}
+                    {{ feedback }}
+                {% else %}
+                    {{ overall_feedback }}
+                {% endif %}
+            </textarea>
+        </div>
+        <div class="col-md-5 col-lg-5 col-sm-5" style="border: 1px solid red; overflow-y: scroll; height: 80%;">
+            <span><b>Overall Comments:</b></span>
+            <textarea id="overall_feedback" style="width:100%; height:20%; resize:none;">{{ overall_feedback }}</textarea>
+
+            {% for entry in evals %}
+                <div class="article_comments">
+                    <h6 id="article_id"><b>Article:</b> {{ entry.wb_display }}</h6>
+                    <span id="scores"><b>Scores:</b> {{ entry.scores }}</span><br>
+                    {% if entry.relevance_comments != '' %}
+                        <span id="relevance_comments"><b>Relevance Comments:</b> {{ entry.relevance_comments }}</span><br>
+                    {% endif %}
+
+                    {% if entry.readability_comments != '' %}
+                        <span id="readability_comments"><b>Readability Comments:</b> {{ entry.readability_comments }}</span><br>
+                    {% endif %}
+
+                    {% if entry.coverage_comments != '' %}
+                        <span id="coverage_comments"><b>Coverage Comments:</b> {{ entry.coverage_comments }}</span><br>
+                    {% endif %}
+
+                    {% if entry.text_comments != '' %}
+                        <span id="text_comments"><b>Text Comments:</b> {{ entry.text_comments }}</span>
+                    {% endif %}
+                </div><br>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
+
+{% block page_footer %}
+{% endblock page_footer %}

@@ -1,0 +1,160 @@
+{% extends 'includes/base.html' %}
+
+{% block homepage %}
+{% endblock homepage %}
+
+{% block aboutpage %}
+{% endblock aboutpage %}
+
+{% block contactpage %}
+{% endblock contactpage %}
+
+{% block taskspage %}
+{% endblock taskspage %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Annotations card-->
+            <div class="card mt-2">
+                <div class="card-header text-center" data-bs-toggle="collapse" data-bs-target="#annotations_div" aria-expanded="false" aria-controls="annotations_div" style="cursor: pointer;">Annotations</div>
+                <div class="card-body py-0">
+                    
+                    <div class="row collapse show" id="annotations_div">
+                        <table class="table table-hover table-sm table-responsive-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col-md-6 col-lg-4 col-sm-6">Task Name</th>
+                                    <th scope="col-md-2 col-lg-2 col-sm-2">#Tasks</th>
+                                    <th scope="col-md-2 col-lg-2 col-sm-2">#Pending</th>
+                                    <th scope="col-md-2 col-lg-2 col-sm-2">View</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="col-md-6 col-lg-4 col-sm-6">Headline Classification</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">5</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">1</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2"><a href="{% url 'annotation' 'headline' %}" class="btn btn-primary float-center btn-sm">Proceed</a></td>
+                                </tr>
+                                <tr>
+                                    <td scope="col-md-6 col-lg-4 col-sm-6">Paraphrasing</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">3</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">1</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2"><a href="{% url 'annotation' 'paraphrase' %}" class="btn btn-primary float-center btn-sm">Proceed</a></td>
+                                </tr>
+                                <tr>
+                                    <td scope="col-md-6 col-lg-4 col-sm-6">Abstractive Summarization</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">6</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">2</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2"><a href="{% url 'annotation' 'summ' %}" class="btn btn-primary float-center btn-sm">Proceed</a></td>
+                                </tr>
+                                <tr>
+                                    <td scope="col-md-6 col-lg-4 col-sm-6">SQuAD Correction</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">6</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">2</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2"><a href="{% url 'annotation' 'squad' %}" class="btn btn-primary float-center btn-sm">Proceed</a></td>
+                                </tr>
+                                <tr>
+                                    <td scope="col-md-6 col-lg-4 col-sm-6">Legal QA</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">6</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">2</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2"><a href="{% url 'annotation' 'legalqa' %}" class="btn btn-primary float-center btn-sm">Proceed</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- Annotations card end-->
+
+            <!-- Evaluations card-->
+            <div class="card mt-2">
+                <div class="card-header text-center" data-bs-toggle="collapse" data-bs-target="#evaluations_div" aria-expanded="false" aria-controls="evaluations_div" style="cursor: pointer;">Evaluations</div>
+                <div class="card-body">
+                    <div class="row collapse show" id="evaluations_div">
+
+                        <table class="table table-hover table-sm table-responsive-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col-md-6 col-lg-4 col-sm-6">Task Name</th>
+                                    <th scope="col-md-2 col-lg-2 col-sm-2">#Tasks</th>
+                                    <th scope="col-md-2 col-lg-2 col-sm-2">#Pending</th>
+                                    <th scope="col-md-2 col-lg-2 col-sm-2">View</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="col-md-6 col-lg-4 col-sm-6">Headline Classification</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">5</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">1</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2"><a href="{% url 'evaluation' 'headline' %}" class="btn btn-primary float-center btn-sm">Proceed</a></td>
+                                </tr>
+                                <tr>
+                                    <td scope="col-md-6 col-lg-4 col-sm-6">Paraphrasing</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">3</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">1</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2"><a href="{% url 'evaluation' 'paraphrase' %}" class="btn btn-primary float-center btn-sm">Proceed</a></td>
+                                </tr>
+                                <tr>
+                                    <td scope="col-md-6 col-lg-4 col-sm-6">Abstractive Summarization</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">6</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">2</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2"><a href="{% url 'evaluation' 'summ' %}" class="btn btn-primary float-center btn-sm">Proceed</a></td>
+                                </tr>
+                                <tr>
+                                    <td scope="col-md-6 col-lg-4 col-sm-6">SQuAD Correction</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">6</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">2</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2"><a href="{% url 'evaluation' 'squad' %}" class="btn btn-primary float-center btn-sm">Proceed</a></td>
+                                </tr>
+                                <tr>
+                                    <td scope="col-md-6 col-lg-4 col-sm-6">Legal QA</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">6</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2">2</td>
+                                    <td scope="col-md-2 col-lg-2 col-sm-2"><a href="{% url 'evaluation' 'legalqa' %}" class="btn btn-primary float-center btn-sm">Proceed</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                       
+                    </div>
+                </div>
+            </div>
+            <!-- Evaluations card end-->
+
+        </div>
+        <div class="col-md-4">
+
+            <!-- Notifications snippet-->
+            <div class="card mt-2">
+                <div class="card-header text-center">Notifications</div>
+                <div class="card-body">
+                    <p class="card-text">Notification -1</p>
+                    <p class="card-text">Notification -2</p>
+                    <p class="card-text">Notification -3</p>
+                    <p class="card-text">Notification -4</p>
+                    <p class="card-text">Notification -5</p>
+                    <p class="card-text">Notification -6</p>
+                    <p class="card-text">Notification -7</p>
+                    <p class="card-text">Notification -8</p>
+                </div>
+                <div class="card-footer"><button class="btn btn-success btn-sm float-end">Load more</button></div>
+            </div>
+
+            <!-- Deadlines snippet-->
+            <div class="card card-body mt-2">
+                <h6 class="card-title">Upcoming Deadlines</h6>
+                <p class="card-text">Headline: 8-9-2022</p>
+                <p class="card-text">Summarization: 11-9-2022</p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block page_footer %}
+{% endblock page_footer %}
